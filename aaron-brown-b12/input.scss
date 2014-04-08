@@ -1,5 +1,7 @@
 $maxPicWidth: 500px;
 
+$mediaRes: "960px", "959px", "768px", "767px", "480px", "479px";
+
 @mixin nav-reduced($displayType: block) {
   width:100%;
   margin:2px auto;
@@ -17,10 +19,10 @@ $maxPicWidth: 500px;
   h1 {
     display:block;
     text-align:center;
-    @media only screen and (min-width: 480px) and (max-width: 767px) {
+    @media only screen and (min-width: nth($mediaRes, 5)) and (max-width: nth($mediaRes, 4)) {
       font-size:24px;
     }
-    @media only screen and (max-width: 479px) {
+    @media only screen and (max-width: nth($mediaRes, 6)) {
       font-size:18px;
     }
   }
@@ -30,13 +32,13 @@ $maxPicWidth: 500px;
   footer & {
     text-align:center;
   }
-  @media only screen and (min-width: 768px) and (max-width: 959px) {
+  @media only screen and (min-width: nth($mediaRes, 3)) and (max-width: nth($mediaRes, 2)) {
     width:100%;
   }
-  @media only screen and (min-width: 480px) and (max-width: 767px) {
+  @media only screen and (min-width: nth($mediaRes, 5)) and (max-width: nth($mediaRes, 4)) {
     width:100%;
   }
-  @media only screen and (max-width: 479px) {
+  @media only screen and (max-width: nth($mediaRes, 6)) {
     width:100%;
   }
 }
